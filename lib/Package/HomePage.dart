@@ -1,46 +1,35 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage ({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-       return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.green.shade300,
-            title: Text(
-              "Home Page",
-            style: TextStyle(color: Colors.white),),
-          ),
-         body:Column(
-           children: [
-             CostumMenu(imageAssets: "assets/segi.PNG",title: "Persegi"),
-             CostumMenu(imageAssets: "assets/segitiga.PNG",title: "segitiga"),
-             Container(
-               margin: EdgeInsets.all(8),
-               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-               decoration: BoxDecoration(color: Colors.green),
-               child: Column(
-                 children: [
-                   Image.asset(
-                     "assets/segitiga.PNG",
-                     height: 100,
-                   ),
-                   const Text("Segitiga"),
-                 ],
-               ),
-             ),
-         ],
-         ),
-   );
-
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green.shade300,
+        title: Text(
+          "Home Page",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: Column(
+        children: [
+          CostumMenu(imageAssets: "assets/segi.PNG", title: "Persegi"),
+          CostumMenu(imageAssets: "assets/segitiga.PNG", title: "segitiga"),
+        ],
+      ),
+    );
   }
 }
 
 class CostumMenu extends StatelessWidget {
   const CostumMenu({
-    super.key, required this.imageAssets, required this.title,
+    super.key,
+    required this.imageAssets,
+    required this.title,
   });
+
   final String imageAssets;
   final String title;
 
@@ -49,9 +38,7 @@ class CostumMenu extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(8),
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      decoration: const BoxDecoration(
-        color: Colors.green
-      ),
+      decoration: const BoxDecoration(color: Colors.green),
       child: Column(
         children: [
           Image.asset(imageAssets),
